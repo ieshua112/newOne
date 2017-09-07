@@ -39,7 +39,7 @@ public class StudentGroup implements GroupOperationService {
 
 	@Override
 	public Student getStudent(int index) {
-		if (index >= students.length && index < 0) {
+		if (index >= students.length || index < 0) {
 			throw new IllegalArgumentException();
 		}
 		return students[index];
@@ -47,7 +47,7 @@ public class StudentGroup implements GroupOperationService {
 
 	@Override
 	public void setStudent(Student student, int index) {
-		if (student == null && index < 0 && index >= students.length) {
+		if (student == null || index < 0 || index >= students.length) {
 			throw new IllegalArgumentException();
 		}	
 		students[index] = student;		
@@ -83,7 +83,7 @@ public class StudentGroup implements GroupOperationService {
 
 	@Override
 	public void remove(int index) {
-		if (index < 0 && index >= students.length) {
+		if (index < 0 || index >= students.length) {
 			throw new IllegalArgumentException();
 		}		
 		Student[] buf = new Student[students.length - 1];			
@@ -110,7 +110,7 @@ public class StudentGroup implements GroupOperationService {
 
 	@Override
 	public void removeFromIndex(int index) {
-		if (index < 0 && index >= students.length) {
+		if (index < 0 || index >= students.length) {
 			throw new IllegalArgumentException();
 		}
 		Student[] buf = new Student[index];		
@@ -140,7 +140,7 @@ public class StudentGroup implements GroupOperationService {
 
 	@Override
 	public void removeToIndex(int index) {
-		if (index < 0 && index >= students.length) {
+		if (index < 0 || index >= students.length) {
 			throw new IllegalArgumentException();
 		}
 		Student[] buf = new Student[students.length - index];		
@@ -198,7 +198,7 @@ public class StudentGroup implements GroupOperationService {
 
 	@Override
 	public Student[] getBetweenBirthDates(Date firstDate, Date lastDate) {
-		if(firstDate == null && lastDate == null) {
+		if(firstDate == null || lastDate == null) {
 			throw new IllegalArgumentException();
 		}
 		StudentGroup st = new StudentGroup();
@@ -210,8 +210,8 @@ public class StudentGroup implements GroupOperationService {
 		}
 		*/
 		for (int i = 0; i < students.length; i++) {
-			if (students[i].getBirthDate().compareTo(firstDate) <= 0 && 
-					students[i].getBirthDate().compareTo(lastDate) >= 0) {
+			if (students[i].getBirthDate().compareTo(firstDate) >= 0 && 
+					students[i].getBirthDate().compareTo(lastDate) <= 0) {
 				st.addLast(students[i]);
 			}				
 		}
@@ -229,7 +229,7 @@ public class StudentGroup implements GroupOperationService {
 
 	@Override
 	public int getCurrentAgeByDate(int indexOfStudent) {
-		if (indexOfStudent < 0 && indexOfStudent >= students.length) {
+		if (indexOfStudent < 0 || indexOfStudent >= students.length) {
 			throw new IllegalArgumentException();
 		}
 		return new Date().getYear() - students[indexOfStudent].getBirthDate().getYear();
@@ -283,7 +283,7 @@ public class StudentGroup implements GroupOperationService {
 
 	@Override
 	public void add(Student student, int index) {
-		if (student == null && index < 0 && index >= students.length) {
+		if (student == null || index < 0 || index >= students.length) {
 			throw new IllegalArgumentException();
 		}		
 		Student[] buf = new Student[students.length + 1];			
