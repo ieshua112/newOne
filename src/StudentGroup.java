@@ -113,7 +113,7 @@ public class StudentGroup implements GroupOperationService {
 		if (index < 0 && index >= students.length) {
 			throw new IllegalArgumentException();
 		}
-		Student[] buf = new Student[index + 1];		
+		Student[] buf = new Student[index];		
 		for(int i = 0; i < buf.length; i++){
 			buf[i] = students[i];
 		}			
@@ -143,9 +143,9 @@ public class StudentGroup implements GroupOperationService {
 		if (index < 0 && index >= students.length) {
 			throw new IllegalArgumentException();
 		}
-		Student[] buf = new Student[students.length - index];		
+		Student[] buf = new Student[students.length - index + 1];		
 		for(int i = 0; i < buf.length; i++){
-			buf[i] = students[index + i];
+			buf[i] = students[index + i - 1];
 		}			
 		students = buf;				
 	}
