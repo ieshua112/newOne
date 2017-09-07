@@ -210,8 +210,8 @@ public class StudentGroup implements GroupOperationService {
 		}
 		*/
 		for (int i = 0; i < students.length; i++) {
-			if (students[i].getBirthDate().compareTo(firstDate) >= 0 && 
-					students[i].getBirthDate().compareTo(lastDate) <= 0) {
+			if (students[i].getBirthDate().compareTo(firstDate) <= 0 && 
+					students[i].getBirthDate().compareTo(lastDate) >= 0) {
 				st.addLast(students[i]);
 			}				
 		}
