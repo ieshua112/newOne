@@ -202,11 +202,13 @@ public class StudentGroup implements GroupOperationService {
 			throw new IllegalArgumentException();
 		}
 		StudentGroup st = new StudentGroup();
+		/*
 		if(firstDate.compareTo(lastDate) > 0) {
 			Date buf = firstDate;
 			firstDate = lastDate;
 			lastDate = buf;
 		}
+		*/
 		for (int i = 0; i < students.length; i++) {
 			if (students[i].getBirthDate().compareTo(firstDate) >= 0 && 
 					students[i].getBirthDate().compareTo(lastDate) <= 0) {
