@@ -189,7 +189,7 @@ public class StudentGroup implements GroupOperationService {
 		}
 		StudentGroup st = new StudentGroup();
 		for (int i = 0; i < students.length; i++) {
-			if (students[i].getBirthDate().equals(date)) {
+			if (students[i].getBirthDate().getDay() == (date.getDay())) {
 				st.addLast(students[i]);
 			}				
 		}
