@@ -215,7 +215,8 @@ public class StudentGroup implements GroupOperationService {
 				st.addLast(students[i]);
 			}				
 		}
-		return st.getStudents();	
+		return students;
+		//return st.getStudents();	
 	}
 
 	@Override
