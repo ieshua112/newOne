@@ -251,7 +251,7 @@ public class StudentGroup implements GroupOperationService {
 	@Override
 	public Student[] getStudentsWithMaxAvgMark() {
 		if(students.length == 0) {
-			return students;
+			throw new IllegalArgumentException();
 		}
 		StudentGroup st = new StudentGroup();
 		double max = students[0].getAvgMark();
