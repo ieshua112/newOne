@@ -300,7 +300,15 @@ public class StudentGroup implements GroupOperationService {
 	}
 
 	private int getStudentIndex(Student student) {
-		return 0;
+		if(student == null) {
+			throw new IllegalArgumentException();
+		}
+		for(int i = 0; i < students.length; i++) {
+			if(student.equals(students[i])) {
+				return i;
+			}
+		}
+		throw new IllegalArgumentException();
 
 	}
 
