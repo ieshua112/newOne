@@ -214,9 +214,8 @@ public class StudentGroup implements GroupOperationService {
 					students[i].getBirthDate().compareTo(lastDate) <= 0) {
 				st.addLast(students[i]);
 			}				
-		}
-		return students;
-		//return st.getStudents();	
+		}		
+		return st.getStudents();	
 	}
 
 	@Override
