@@ -273,11 +273,11 @@ public class StudentGroup implements GroupOperationService {
 		if(student == null) {
 			throw new IllegalArgumentException();
 		}
-		flag = false;
+		boolean flag = false;
 		for(int i = 0; i < students.length - 1; i++) {
 			if(student.equals(students[i])) {
-				return students[i + 1];
 				flag = true;
+				return students[i + 1];				
 			}
 		}
 		if(flag) {
