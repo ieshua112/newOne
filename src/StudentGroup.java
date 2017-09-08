@@ -103,8 +103,7 @@ public class StudentGroup implements GroupOperationService {
 		}
 		for (int i = 0; i < students.length; i++) {
 			if(students[i].equals(student)) {
-				remove(i);
-				break;
+				remove(i--);				
 			}
 		}
 	}
