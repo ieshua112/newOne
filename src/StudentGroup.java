@@ -278,7 +278,7 @@ public class StudentGroup implements GroupOperationService {
 				return students[i + 1];
 			}
 		}
-		return student;
+		return null;
 	}
 
 	@Override
