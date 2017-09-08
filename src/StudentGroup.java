@@ -229,7 +229,7 @@ public class StudentGroup implements GroupOperationService {
 
 	@Override
 	public int getCurrentAgeByDate(int indexOfStudent) {
-		if (indexOfStudent < 0 || indexOfStudent >= students.length) {
+		if (indexOfStudent == 0) {
 			throw new IllegalArgumentException();
 		}
 		return new Date().getYear() - students[indexOfStudent].getBirthDate().getYear();
