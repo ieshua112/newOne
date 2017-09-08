@@ -270,7 +270,14 @@ public class StudentGroup implements GroupOperationService {
 
 	@Override
 	public Student getNextStudent(Student student) {
-		
+		if(student == null) {
+			throw new IllegalArgumentException();
+		}
+		for(int i = 0; i < students.length - 1; i++) {
+			if(student.equals(students[i])) {
+				return students[i + 1];
+			}
+		}
 		return student;
 	}
 
